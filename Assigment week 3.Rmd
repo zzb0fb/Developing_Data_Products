@@ -1,0 +1,39 @@
+---
+title: "Assigment Week 3"
+author: "Manuel Solans"
+date: "28/11/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Loading plotly library
+
+```{r comment= ""}
+library(rjson)
+```
+
+
+## First graph
+```{r firstgraph, echo=FALSE}
+set.seed(2021-11-28)
+temp <- rnorm(100, mean = 30, sd = 5)
+pressue <- rnorm(100)
+dtime <- 1:100
+plot_ly(x = ~temp, y = ~pressue, z = ~dtime,
+        type = "scatter3d", color = ~temp)
+```
+
+## Second graph
+```{r secondgraph, echo=FALSE}
+head(mtcars)
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter", 
+        color = ~factor(cyl), size = ~hp)
+
+```    
+
+
+
+
